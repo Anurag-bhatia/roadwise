@@ -259,7 +259,7 @@ a.card:hover .card-media img { transform: scale(1.04); }
 /* Partner banner: copy on the left, photo on the right fading into the cream. */
 .partner-note { position: relative; overflow: hidden; isolation: isolate; border: 1.5px dashed var(--orange); background: #fffaf2; border-radius: var(--radius); padding: 26px 24px; font-size: 15px; min-height: 140px; display: flex; align-items: center; }
 .partner-note-img { position: absolute; top: 0; right: 0; bottom: 0; width: 48%; z-index: -1; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.2) 18%, rgb(0 0 0 / 0.55) 36%, rgb(0 0 0 / 0.85) 52%, #000 65%); mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 0.2) 18%, rgb(0 0 0 / 0.55) 36%, rgb(0 0 0 / 0.85) 52%, #000 65%); }
-.partner-note-img img { object-fit: cover; object-position: center 12%; }
+.partner-note-img img { object-fit: cover; object-position: center 35%; }
 .partner-note-body { max-width: 58%; }
 .partner-note .eyebrow { color: var(--orange-ink); }
 .partner-note a { color: var(--green-ink); font-weight: 600; text-decoration: underline; }

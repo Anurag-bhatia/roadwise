@@ -187,7 +187,7 @@ export function PartnerNote({ children }: { children: React.ReactNode }) {
   return (
     <div className="partner-note">
       <div className="partner-note-img">
-        <Image src="/images/partner-legal.jpg" alt="" fill sizes="160px" />
+        <Image src="/images/partner-legal.webp" alt="" fill sizes="(max-width: 600px) 100vw, 480px" />
       </div>
       <div className="partner-note-body">{children}</div>
     </div>
