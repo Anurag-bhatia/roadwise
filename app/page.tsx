@@ -60,7 +60,7 @@ export default function Home() {
               </Link>
             }
           />
-          <GuideFilter />
+          <GuideFilter limit={4} />
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export default function Home() {
               </Link>
             }
           />
-          <GuideFilter />
+          <GuideFilter limit={4} />
         </div>
       </section>
 
