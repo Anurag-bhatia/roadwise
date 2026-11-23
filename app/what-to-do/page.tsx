@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { OfficialSourcesPanel, SituationCard } from "@/components/Cards";
+import { PagedGrid } from "@/components/Pagination";
 import { situations } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -18,11 +19,14 @@ export default function WhatToDoPage() {
       </section>
       <section className="section">
         <div className="container">
-          <div className="grid grid-4">
-            {situations.map((s, i) => (
+          <PagedGrid
+            className="grid grid-4"
+            pageSize={8}
+            label="Situations"
+            items={situations.map((s, i) => (
               <SituationCard key={s.slug} s={s} index={i} />
             ))}
-          </div>
+          />
         </div>
       </section>
       <section className="section section-pale">

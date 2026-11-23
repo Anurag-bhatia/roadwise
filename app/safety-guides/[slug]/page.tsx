@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleFooter, ArticleSidebar } from "@/components/ArticleExtras";
+import { PrevNext } from "@/components/Cards";
 import { Icon } from "@/components/Icon";
 import { checklists, getGuide, guideImage, guides, type GuideCategory } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -65,6 +66,7 @@ export default async function GuidePage({ params }: Props) {
                 </ul>
               </div>
             ))}
+            <PrevNext items={guides} current={g.slug} basePath="/safety-guides" label="guide" />
             <ArticleFooter />
           </article>
           <ArticleSidebar checklist={checklist} />

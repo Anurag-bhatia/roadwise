@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { OfficialSourcesPanel } from "@/components/Cards";
+import { OfficialLinks } from "@/components/Cards";
 
 export const metadata: Metadata = {
   title: "Official Sources",
@@ -19,9 +19,16 @@ export default function OfficialSourcesPage() {
           </p>
         </div>
       </section>
-      <section className="section">
+      <section className="home-section important-links">
         <div className="container">
-          <OfficialSourcesPanel />
+          <div className="home-title">
+            <h2>Important links</h2>
+          </div>
+          <p className="home-intro">
+            Rules and penalties change and can differ by state. For the exact rule or fine, please refer to the
+            official source.
+          </p>
+          <OfficialLinks />
         </div>
       </section>
     </>

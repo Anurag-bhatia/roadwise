@@ -18,7 +18,7 @@ export default function SafetyGuidesPage() {
       </section>
       <section className="section">
         <div className="container" style={{ paddingTop: 12 }}>
-          <GuideFilter />
+          <GuideFilter pageSize={4} />
         </div>
       </section>
     </>

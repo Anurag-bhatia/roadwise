@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PartnerNote, VideoCard, VideoThumb } from "@/components/Cards";
 import { Icon } from "@/components/Icon";
+import { PagedGrid } from "@/components/Pagination";
 import { videos } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -39,11 +40,14 @@ export default function VideosPage() {
       <section className="section section-pale">
         <div className="container">
           <h2 style={{ fontSize: 28, marginBottom: 24 }}>All videos</h2>
-          <div className="grid grid-3">
-            {videos.map((v) => (
+          <PagedGrid
+            className="grid grid-3"
+            pageSize={3}
+            label="Videos"
+            items={videos.map((v) => (
               <VideoCard key={v.title} v={v} />
             ))}
-          </div>
+          />
           <div style={{ marginTop: 28 }}>
             <PartnerNote>
               <p>

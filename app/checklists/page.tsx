@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ChecklistCard } from "@/components/Cards";
+import { PagedGrid } from "@/components/Pagination";
 import { checklists } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -19,11 +20,14 @@ export default function ChecklistsPage() {
       </section>
       <section className="section">
         <div className="container">
-          <div className="grid grid-4">
-            {checklists.map((c) => (
+          <PagedGrid
+            className="grid grid-3"
+            pageSize={3}
+            label="Checklists"
+            items={checklists.map((c) => (
               <ChecklistCard key={c.slug} c={c} />
             ))}
-          </div>
+          />
         </div>
       </section>
     </>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleFooter, ArticleSidebar } from "@/components/ArticleExtras";
-import { VideoThumb } from "@/components/Cards";
+import { PrevNext, VideoThumb } from "@/components/Cards";
 import { Icon } from "@/components/Icon";
 import { getChecklist, getSituation, situations, videos } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -88,6 +88,7 @@ export default async function SituationPage({ params }: Props) {
               </div>
             )}
 
+            <PrevNext items={situations} current={s.slug} basePath="/what-to-do" label="situation" />
             <ArticleFooter />
           </article>
           <ArticleSidebar currentSlug={s.slug} checklist={checklist} />

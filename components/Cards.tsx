@@ -183,6 +183,68 @@ export function OfficialSourcesPanel({ compact }: { compact?: boolean }) {
   );
 }
 
+// Previous / next links between items in a series, for the foot of detail pages.
+export function PrevNext({
+  items,
+  current,
+  basePath,
+  label,
+}: {
+  items: { slug: string; title: string }[];
+  current: string;
+  basePath: string;
+  label: string;
+}) {
+  const i = items.findIndex((x) => x.slug === current);
+  const prev = items[i - 1];
+  const next = items[i + 1];
+  if (!prev && !next) return null;
+
+  return (
+    <nav className="prev-next" aria-label={`More ${label}`}>
+      {prev ? (
+        <Link href={`${basePath}/${prev.slug}`} rel="prev">
+          <small>‹ Previous {label}</small>
+          <strong>{prev.title}</strong>
+        </Link>
+      ) : (
+        <span />
+      )}
+      {next && (
+        <Link href={`${basePath}/${next.slug}`} rel="next" className="next">
+          <small>Next {label} ›</small>
+          <strong>{next.title}</strong>
+        </Link>
+      )}
+      <p className="prev-next-count">
+        {label.charAt(0).toUpperCase() + label.slice(1)} {i + 1} of {items.length}
+      </p>
+    </nav>
+  );
+}
+
+// Grid of official source links, shared by the home page and the Official Sources page.
+export function OfficialLinks() {
+  return (
+    <div className="official-links">
+      {officialSources.map((s) => (
+        <a
+          key={s.name}
+          href={s.href}
+          className="official-link"
+          {...(s.href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}
+        >
+          <strong>{s.name}</strong>
+          <small>{s.detail}</small>
+          <span className="read-more">
+            Read more <Icon name="arrow" size={16} />
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export function PartnerNote({ children }: { children: React.ReactNode }) {
   return (
     <div className="partner-note">

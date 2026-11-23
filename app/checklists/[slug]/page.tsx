@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PrevNext } from "@/components/Cards";
 import { PrintButton } from "@/components/PrintButton";
 import { checklists, getChecklist } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -55,6 +56,9 @@ export default async function ChecklistPage({ params }: Props) {
               <span>Date: ____________ &nbsp; Vehicle no.: ____________</span>
               <span>RoadWise India · General safety information, not legal advice. Reviewed {site.reviewedOn}.</span>
             </div>
+          </div>
+          <div className="no-print">
+            <PrevNext items={checklists} current={c.slug} basePath="/checklists" label="checklist" />
           </div>
         </div>
       </section>
