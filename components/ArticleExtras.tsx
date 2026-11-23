@@ -9,8 +9,9 @@ export function ArticleFooter() {
     <>
       <PartnerNote>
         <p className="eyebrow">Related resource · From our partner LOTS247</p>
+        <h3>Need help with a legal issue on the road?</h3>
         <p>
-          <strong>Need help with a legal issue on the road?</strong> See how Roadside Legal Assistance works.{" "}
+          See how Roadside Legal Assistance works.{" "}
           <a href={site.lots247Url} target="_blank" rel="noopener">
             Learn more →
           </a>
