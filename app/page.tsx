@@ -51,6 +51,22 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <SectionHead
+            label="Safety guides"
+            title="Build safer driving habits"
+            intro="For everyday trips, long journeys and commercial vehicles."
+            action={
+              <Link href="/safety-guides" className="text-link">
+                All safety guides <Icon name="arrow" size={16} />
+              </Link>
+            }
+          />
+          <GuideFilter />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHead
             label="Challan Times"
             title="Latest traffic and challan news"
             action={
