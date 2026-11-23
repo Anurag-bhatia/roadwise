@@ -10,9 +10,9 @@ export function ArticleFooter() {
       <PartnerNote>
         <p className="eyebrow">Related resource · From our partner LOTS247</p>
         <h3>Need help with a legal issue on the road?</h3>
-        <p>
-          See how Roadside Legal Assistance works.{" "}
-          <a href={site.lots247Url} target="_blank" rel="noopener">
+        <p>See how Roadside Legal Assistance works.</p>
+        <p style={{ marginTop: 10 }}>
+          <a href={site.lots247Url} target="_blank" rel="noopener" style={{ whiteSpace: "nowrap" }}>
             Learn more →
           </a>
         </p>
