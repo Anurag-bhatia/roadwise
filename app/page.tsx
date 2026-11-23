@@ -64,25 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <SectionHead
-            label="Challan Times"
-            title="Latest traffic and challan news"
-            action={
-              <a href={site.challanTimesUrl} target="_blank" rel="noopener" className="text-link">
-                Read more on Challan Times <Icon name="external" size={16} />
-              </a>
-            }
-          />
-          <div className="grid grid-4 scroll-row">
-            {news.map((n) => (
-              <NewsCard key={n.headline} item={n} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section section-navy section-photo">
         <Image src="/images/videos-bg.jpg" alt="" fill sizes="100vw" className="section-photo-bg" />
         <div className="container">
@@ -105,6 +86,25 @@ export default function Home() {
           <p className="disclosure">
             From the RSLA (Roadside Legal Assistance) video series by LOTS247, shared as an educational resource.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHead
+            label="Challan Times"
+            title="Latest traffic and challan news"
+            action={
+              <a href={site.challanTimesUrl} target="_blank" rel="noopener" className="text-link">
+                Read more on Challan Times <Icon name="external" size={16} />
+              </a>
+            }
+          />
+          <div className="grid grid-4 scroll-row">
+            {news.map((n) => (
+              <NewsCard key={n.headline} item={n} />
+            ))}
+          </div>
         </div>
       </section>
 
