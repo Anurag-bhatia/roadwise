@@ -67,6 +67,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section section-navy section-photo">
+        <Image src="/images/videos-bg.jpg" alt="" fill sizes="100vw" className="section-photo-bg" />
+        <div className="container">
+          <SectionHead
+            dark
+            label="Watch and learn"
+            title="Road safety videos"
+            intro="Short explainers on real roadside situations."
+            action={
+              <Link href="/videos" className="btn btn-primary btn-sm">
+                See all videos <Icon name="arrow" size={16} />
+              </Link>
+            }
+          />
+          <div className="grid grid-4">
+            {videos.slice(0, 4).map((v) => (
+              <VideoCard key={v.title} v={v} dark />
+            ))}
+          </div>
+          <p className="disclosure">
+            From the RSLA (Roadside Legal Assistance) video series by LOTS247, shared as an educational resource.
+          </p>
+        </div>
+      </section>
+
       <section className="section section-cream">
         <div className="container">
           <SectionHead
@@ -99,31 +124,6 @@ export default function Home() {
             }
           />
           <GuideFilter />
-        </div>
-      </section>
-
-      <section className="section section-navy section-photo">
-        <Image src="/images/videos-bg.jpg" alt="" fill sizes="100vw" className="section-photo-bg" />
-        <div className="container">
-          <SectionHead
-            dark
-            label="Watch and learn"
-            title="Road safety videos"
-            intro="Short explainers on real roadside situations."
-            action={
-              <Link href="/videos" className="btn btn-primary btn-sm">
-                See all videos <Icon name="arrow" size={16} />
-              </Link>
-            }
-          />
-          <div className="grid grid-4">
-            {videos.slice(0, 4).map((v) => (
-              <VideoCard key={v.title} v={v} dark />
-            ))}
-          </div>
-          <p className="disclosure">
-            From the RSLA (Roadside Legal Assistance) video series by LOTS247, shared as an educational resource.
-          </p>
         </div>
       </section>
 
